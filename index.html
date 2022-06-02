@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./main.css" />
+
+    <script type="module" src="./js/main.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <div class="container header-container">
+        <div class="header-wrap">
+          <div class="header-logo">
+            <img src="./Icons/logo.svg" alt="logo" />
+          </div>
+          <input
+            type="text"
+            class="header-search"
+            placeholder="Введите запрос"
+          />
+        </div>
+      </div>
+    </header>
+
+    <main class="main">
+      <section class="main-table">
+        <div class="container section-container">
+          <div class="table-wrap">
+            <h1 class="table-title">Клиенты</h1>
+            <table class="table">
+              <thead class="table-header">
+                <tr>
+                  <th class="title-column column-id">
+                    <span class="title-column-text column-id-text">ID</span>
+                    <img src="./Icons/arrow_upward.svg" alt="Arrow" />
+                  </th>
+                  <th class="title-column column-FIO">
+                    <span class="title-column-text title-column-FIO">
+                      Фамилия Имя Отчество
+                    </span>
+                    <img src="./Icons/arrow_downward.svg" alt="Arrow" />
+                    <span class="FIO-sort">А-Я</span>
+                  </th>
+                  <th class="title-column column-date">
+                    <span class="title-column-text title-column-date">
+                      Дата и время создания
+                    </span>
+                    <img src="./Icons/arrow_downward.svg" alt="Arrow" />
+                  </th>
+                  <th class="title-column column-change">
+                    <span class="title-column-text title-column-change">
+                      Последние изменения
+                    </span>
+                    <img src="./Icons/arrow_downward.svg" alt="Arrow" />
+                  </th>
+                  <th class="title-column column-contacts">
+                    <span class="title-column-text title-column-contacts">
+                      Контакты
+                    </span>
+                  </th>
+                  <th class="title-column column-actions">
+                    <span class="title-column-text title-column-actions">
+                      Действия
+                    </span>
+                  </th>
+                </tr>
+              </thead>
+              <tbody class="table-body"></tbody>
+            </table>
+          </div>
+        </div>
+        <div class="button-create-client">
+          <button class="create-client">
+            <img src="./Icons/people.svg" alt="People" />
+            <span>Добавить клиента</span>
+          </button>
+        </div>
+      </section>
+
+      <form action="#" class="modal-add block-center modal">
+        <div class="modal-add-inner modal-inner">
+          <div class="modal-add-inputs">
+            <div class="modal-add-close modal-close">
+              <img src="./Icons/cross.svg" alt="" />
+            </div>
+            <div class="modal-add-title">
+              <h3 class="header modal-add-header">Добавить клиента</h3>
+            </div>
+            <div class="modal-add-elements">
+              <div class="modal-add-item">
+                <span class="error-second-name error"></span>
+                <label for="add-second-name" class="modal-add-placeholder">
+                  <span>Фамилия</span><span>*</span>
+                </label>
+                <input
+                  type="text"
+                  class="modal-add-input modal-add-surname"
+                  id="add-second-name"
+                />
+              </div>
+              <div class="modal-add-item">
+                <span class="error-first-name error"></span>
+                <label for="add-first-name" class="modal-add-placeholder">
+                  <span>Имя</span><span>*</span>
+                </label>
+                <input
+                  type="text"
+                  class="modal-add-input modal-add-name"
+                  id="add-first-name"
+                />
+              </div>
+              <div class="modal-add-item">
+                <span class="error-father-name error"></span>
+                <label for="add-father-name" class="modal-add-placeholder">
+                  <span>Отчество</span>
+                </label>
+                <input
+                  type="text"
+                  class="modal-add-input modal-add-fathername"
+                  id="add-father-name"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="modal-add-contacts">
+            <div class="contact-elements"></div>
+
+            <button class="create-contact">
+              <img src="./Icons/add_circle_outline.svg" alt="" />
+              <span>Добавить контакт</span>
+            </button>
+          </div>
+          <button action="submit" class="button modal-add-send">
+            Сохранить
+          </button>
+        </div>
+      </form>
+
+      <form action="#" class="modal-edit block-center modal">
+        <div class="modal-edit-inner modal-inner">
+          <div class="modal-edit-inputs">
+            <div class="modal-edit-close modal-close">
+              <img src="./Icons/cross.svg" alt="" />
+            </div>
+            <div class="modal-edit-title">
+              <h3 class="header modal-edit-header">Изменить клиента</h3>
+              <span class="modal-edit-subheader">ID: 123456</span>
+            </div>
+            <div class="modal-edit-elements">
+              <div class="modal-edit-item">
+                <label for="edit-second-name" class="modal-edit-placeholder">
+                  <span>Фамилия</span><span>*</span>
+                </label>
+                <input
+                  type="text"
+                  class="modal-edit-input"
+                  id="edit-second-name"
+                />
+              </div>
+              <div class="modal-edit-item">
+                <label for="edit-first-name" class="modal-edit-placeholder">
+                  <span>Имя</span><span>*</span>
+                </label>
+                <input
+                  type="text"
+                  class="modal-edit-input"
+                  id="edit-first-name"
+                />
+              </div>
+              <div class="modal-edit-item">
+                <label for="edit-father-name" class="modal-edit-placeholder">
+                  <span>Отчество</span>
+                </label>
+                <input
+                  type="text"
+                  class="modal-edit-input"
+                  id="edit-father-name"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="modal-edit-contacts">
+            <div class="edit-contact-elements contact-elements"></div>
+
+            <button class="create-contact">
+              <img src="./Icons/add_circle_outline.svg" alt="" />
+              <span>Добавить контакт</span>
+            </button>
+          </div>
+          <div class="modal-edit-actions">
+            <button class="modal-edit-send">Сохранить</button>
+            <button class="modal-edit-delete">Удалить клиента</button>
+          </div>
+        </div>
+      </form>
+
+      <form action="#" class="modal-delete block-center modal">
+        <div class="modal-delete-inner modal-inner">
+          <div class="modal-delete-body">
+            <div class="modal-delete-close modal-close">
+              <img src="./Icons/cross.svg" alt="" />
+            </div>
+            <div class="modal-delete-title">
+              <h3 class="header modal-delete-header">Удалить клиента</h3>
+              <span class="modal-delete-subheader">ID: 123456</span>
+            </div>
+            <div class="modal-delete-text">
+              <p>Вы действительно хотите удалить данного клиента?</p>
+            </div>
+            <div class="modal-delete-actions">
+              <button class="modal-delete-confirm">Удалить клиента</button>
+              <button class="modal-delete-cancel modal-close">Отменить</button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </main>
+  </body>
+</html>

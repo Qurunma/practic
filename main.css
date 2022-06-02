@@ -1,0 +1,555 @@
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+html,
+body {
+  font-family: "Open Sans", sans-serif;
+  font-size: 62.5%;
+  font-weight: normal;
+  color: black;
+  background: #e5e5e5;
+  width: 100%;
+  height: 100%;
+}
+body {
+  margin: 0;
+  padding: 0;
+}
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+button,
+input {
+  outline: none;
+  border: none;
+  padding: 0;
+}
+button {
+  cursor: pointer;
+}
+p {
+  margin-top: 1rem;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+  padding: 0;
+}
+th {
+  border-bottom: 0.8rem solid rgba(0, 0, 0, 0);
+}
+.block-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.container {
+  width: 118.6rem;
+  margin: 0 auto;
+}
+header {
+  position: sticky;
+  top: 0;
+  padding: 2rem 0;
+
+  background: #ffffff;
+  box-shadow: 0px 9.03012px 27.0904px rgba(176, 190, 197, 0.32),
+    0px 3.38629px 5.64383px rgba(176, 190, 197, 0.32);
+}
+
+.header-wrap {
+  display: flex;
+  align-items: center;
+}
+.header-logo {
+  width: 5rem;
+  height: 5rem;
+  margin-right: 5.3rem;
+}
+.header-search {
+  width: 58.1rem;
+  height: 4.4rem;
+  border: 0.1rem solid rgba(51, 51, 51, 0.2);
+}
+
+.main {
+  margin-top: 4rem;
+}
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.table-title {
+  font-size: 2.4rem;
+  font-weight: 700;
+  line-height: 3.3rem;
+  margin-bottom: 1rem;
+}
+.title-column {
+  text-align: left;
+}
+.title-column-text {
+  text-align: left;
+  font-size: 1.2rem;
+  color: #b0b0b0;
+}
+.title-column img {
+  width: 1.2rem;
+  height: 1.2rem;
+}
+.column-id {
+  padding-left: 2rem;
+  margin-right: 4.7rem;
+}
+.column-FIO {
+  margin-right: 6.4rem;
+}
+.column-FIO .FIO-sort {
+  font-size: 1.4rem;
+  font-weight: 600;
+  line-height: 1.4rem;
+
+  color: #9873ff;
+}
+.column-date {
+  margin-right: 7.6rem;
+}
+.column-change {
+  margin-right: 4.2rem;
+}
+.column-contacts {
+  margin-right: 9.4rem;
+}
+.column-id-text {
+  color: #9873ff;
+}
+
+.table-element {
+  background: white;
+  align-items: center;
+  height: 6rem;
+}
+.id-meaning {
+  max-width: 9rem;
+  font-weight: 400;
+  font-size: 1.2rem;
+  line-height: 1.6rem;
+  text-align: center;
+  color: #b0b0b0;
+}
+
+.FIO-meaning {
+  max-width: 19rem;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19px;
+  color: #333333;
+}
+.table-date {
+  max-width: 13rem;
+}
+.table-date .date {
+  padding: 1rem;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19px;
+}
+.table-date .time {
+  max-width: 3.6rem;
+  padding: 1rem 0;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19px;
+  color: #b0b0b0;
+}
+.contacts-meaning {
+  max-width: 9.5rem;
+}
+.contacts-meaning,
+.actions-meaning {
+  padding: 2rem 0;
+}
+.contacts-meaning button:not(:last-child) {
+  margin-right: 0.7rem;
+}
+.actions-meaning button:not(:last-child) {
+  margin-right: 3.2rem;
+}
+.contacts-meaning button,
+.actions-meaning button {
+  display: inline-flex;
+  align-items: center;
+  background: inherit;
+  align-content: center;
+}
+.contacts-meaning button img,
+.actions-meaning button img {
+  width: 1.6rem;
+  height: 1.6rem;
+}
+.button-create-client {
+  margin: 4rem auto 0;
+  width: fit-content;
+}
+.create-client {
+  display: flex;
+  align-items: center;
+  padding: 1.25rem 2.65rem;
+  border: 1px solid #9873ff;
+  background: rgba(0, 0, 0, 0);
+}
+.create-client img {
+  width: 2.2rem;
+  height: 1.6rem;
+  margin-right: 1rem;
+}
+.create-client span {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 19px;
+  color: #9873ff;
+}
+.modal-add {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  z-index: 10;
+  padding: 3rem 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: none;
+}
+.modal-add-inner {
+  position: relative;
+  width: 66.3rem;
+  background: #ffffff;
+  box-shadow: 0px 0px 35px rgba(0, 0, 0, 0.15);
+  padding: 2.9rem 0 2.4rem;
+  text-align: center;
+}
+.modal-add-inputs {
+  margin: 0 3rem;
+}
+.modal-add-title {
+  display: flex;
+}
+.modal-add-header {
+  font-weight: 700;
+  font-size: 1.8rem;
+  line-height: 2.5rem;
+  margin-bottom: 1rem;
+  margin-right: 0.9rem;
+}
+.modal-add-subheader {
+  margin-bottom: 2.8rem;
+  font-size: 1.6rem;
+  line-height: 160%;
+  opacity: 0.5;
+}
+.modal-add-elements {
+  align-items: center;
+  width: 100%;
+}
+.modal-add-item {
+  text-align: left;
+  display: grid;
+}
+.modal-add-item:not(:last-child) {
+  margin-bottom: 1.5rem;
+}
+.modal-add-item:last-child {
+  margin-bottom: 2.5rem;
+}
+.modal-add-input {
+  width: 100%;
+  height: 100%;
+  border-bottom: 1px solid #c8c5d1;
+  font-size: 1.4rem;
+  line-height: 160%;
+}
+.error {
+  font-size: 1.4rem;
+  color: red;
+}
+.modal-add-placeholder {
+  font-size: 1.4rem;
+  line-height: 1.4rem;
+  color: #b0b0b0;
+}
+.modal-add-placeholder span:not(:only-of-type):last-child {
+  color: #9873ff;
+}
+.modal-add-close {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  width: 5rem;
+  height: 5rem;
+  cursor: pointer;
+}
+.modal-add-contacts {
+  background: rgba(200, 197, 209, 0.2);
+  padding: 2.5rem 3rem;
+  margin-bottom: 2.5rem;
+}
+.modal-add-contacts button {
+  display: inline-flex;
+  align-items: center;
+  margin: 0.9rem auto;
+  height: 1.9rem;
+  background: rgba(0, 0, 0, 0);
+}
+.modal-add-contacts button img {
+  width: 1.33rem;
+  height: 1.33rem;
+  margin-right: 0.53rem;
+}
+.modal-add-contacts button span {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1.4rem;
+  line-height: 1.9rem;
+  color: #333333;
+}
+.contact-add-element {
+  display: flex;
+}
+.contact-type {
+  width: 32%;
+  height: 3.7rem;
+}
+.contact-text {
+  width: 68%;
+  height: 3.5rem;
+  border: 0.1rem solid #c8c5d1;
+  background: inherit;
+}
+.modal-add-send {
+  font-family: "Open Sans";
+  padding: 1.25rem 3.5rem;
+  background: #9873ff;
+  color: #fff;
+}
+
+.modal-edit {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  z-index: 10;
+  padding: 3rem 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: none;
+}
+.modal-edit-inner {
+  position: relative;
+  width: 66.3rem;
+  background: #ffffff;
+  box-shadow: 0px 0px 35px rgba(0, 0, 0, 0.15);
+  padding: 2.9rem 0 2.4rem;
+  text-align: center;
+}
+.modal-edit-inputs {
+  margin: 0 3rem;
+}
+.modal-edit-title {
+  display: flex;
+  align-items: center;
+}
+.modal-edit-header {
+  font-weight: 700;
+  font-size: 1.8rem;
+  line-height: 2.5rem;
+  margin-bottom: 1rem;
+  margin-right: 0.9rem;
+}
+.modal-edit-subheader {
+  margin-bottom: 1rem;
+  font-size: 1.6rem;
+  line-height: 1.6rem;
+  opacity: 0.5;
+}
+.modal-edit-elements {
+  align-items: center;
+  width: 100%;
+}
+.modal-edit-item {
+  text-align: left;
+  display: block;
+}
+.modal-edit-item:not(:last-child) {
+  margin-bottom: 1.5rem;
+}
+.modal-edit-item:last-child {
+  margin-bottom: 2.5rem;
+}
+.modal-edit-input {
+  width: 100%;
+  height: 100%;
+  border-bottom: 1px solid #c8c5d1;
+  font-size: 1.4rem;
+  line-height: 160%;
+}
+.modal-edit-placeholder {
+  font-size: 1.4rem;
+  line-height: 1.4rem;
+  color: #b0b0b0;
+}
+.modal-edit-placeholder span:not(:only-of-type):last-child {
+  color: #9873ff;
+}
+.modal-edit-close {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  width: 5rem;
+  height: 5rem;
+  cursor: pointer;
+}
+.modal-edit-contacts {
+  background: rgba(200, 197, 209, 0.2);
+  padding: 2.5rem 3rem;
+  margin-bottom: 2.5rem;
+}
+.modal-edit-contacts button {
+  display: inline-flex;
+  align-items: center;
+  margin: 0.9rem auto;
+  height: 1.9rem;
+  background: rgba(0, 0, 0, 0);
+}
+.modal-edit-contacts button img {
+  width: 1.33rem;
+  height: 1.33rem;
+  margin-right: 0.53rem;
+}
+.modal-edit-contacts button span {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1.4rem;
+  line-height: 1.9rem;
+  color: #333333;
+}
+.contact-edit-element {
+  display: flex;
+}
+.contact-type {
+  width: 32%;
+  height: 3.7rem;
+}
+.contact-text {
+  width: 68%;
+  height: 3.5rem;
+  border: 0.1rem solid #c8c5d1;
+  background: inherit;
+}
+.modal-edit-actions {
+  display: inline-grid;
+  gap: 0.5rem;
+}
+.modal-edit-send {
+  font-family: "Open Sans";
+  padding: 1.25rem 3.5rem;
+  background: #9873ff;
+  color: #fff;
+}
+.modal-edit-delete {
+  text-decoration: underline;
+  background: rgba(0, 0, 0, 0);
+}
+
+.modal-delete {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  z-index: 10;
+  padding: 3rem 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: none;
+}
+.modal-delete-inner {
+  position: relative;
+  width: 40.5rem;
+  background: #ffffff;
+  box-shadow: 0px 0px 35px rgba(0, 0, 0, 0.15);
+  padding: 2.9rem 0 2.4rem;
+  text-align: center;
+}
+.modal-delete-body {
+  margin: 0 3rem;
+}
+.modal-delete-title {
+  display: flex;
+}
+.modal-delete-header {
+  font-weight: 700;
+  font-size: 1.8rem;
+  line-height: 2.5rem;
+  margin-bottom: 1.1rem;
+  margin-right: 0.9rem;
+}
+.modal-delete-subheader {
+  margin-bottom: 1.1rem;
+  font-size: 1.6rem;
+  line-height: 160%;
+  opacity: 0.5;
+}
+.modal-delete-text p {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19px;
+  margin-bottom: 2.5rem;
+}
+.modal-delete-actions {
+  display: inline-grid;
+}
+.modal-delete-close {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  width: 5rem;
+  height: 5rem;
+  cursor: pointer;
+}
+.modal-delete-confirm {
+  font-family: "Open Sans";
+  padding: 1.25rem 3.5rem;
+  background: #9873ff;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+.modal-delete-cancel {
+  text-decoration: underline;
+  background: rgba(0, 0, 0, 0);
+}
+
+.contact {
+  color: white;
+  display: flex;
+  position: fixed;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+}
