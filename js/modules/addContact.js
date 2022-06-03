@@ -4,6 +4,8 @@ export function addContact(element) {
   const select = document.createElement("select");
   const options = [];
   const input = document.createElement("input");
+  const buttonDelete = document.createElement("button");
+  const imgDelete = document.createElement("img");
 
   if (modal.classList.contains("modal-add")) {
     div.classList.add("contact-add-element");
@@ -12,9 +14,21 @@ export function addContact(element) {
   }
   select.classList.add("contact-type");
   input.classList.add("contact-text");
+  buttonDelete.append(imgDelete);
+  buttonDelete.classList.add("btn-delete");
+
+  buttonDelete.addEventListener("click", () => {
+    div
+      .closest(".modal-contacts")
+      .querySelector(".create-contact").style.display = "flex";
+    div.remove();
+  });
+
+  imgDelete.src = "./Icons/cross.svg";
 
   div.append(select);
   div.append(input);
+  div.append(buttonDelete);
 
   for (let i = 0; i < 6; i++) {
     options.push(document.createElement("option"));
@@ -52,6 +66,7 @@ export function addContact(element) {
     //     input.type = "text";
     //   }
     // });
+
     select.append(options[i]);
   }
   options[

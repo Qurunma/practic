@@ -26,9 +26,11 @@
           </div>
           <input
             type="text"
+            list="for-search"
             class="header-search"
             placeholder="Введите запрос"
           />
+          <datalist id="for-search"></datalist>
         </div>
       </div>
     </header>
@@ -38,31 +40,39 @@
         <div class="container section-container">
           <div class="table-wrap">
             <h1 class="table-title">Клиенты</h1>
-            <table class="table">
+            <table class="table sortable">
               <thead class="table-header">
                 <tr>
-                  <th class="title-column column-id">
-                    <span class="title-column-text column-id-text">ID</span>
-                    <img src="./Icons/arrow_upward.svg" alt="Arrow" />
+                  <th class="title-column column-id sortable-column">
+                    <button>
+                      <span class="title-column-text column-id-text">ID</span>
+                      <img src="./Icons/arrow_upward.svg" alt="Arrow" />
+                    </button>
                   </th>
-                  <th class="title-column column-FIO">
-                    <span class="title-column-text title-column-FIO">
-                      Фамилия Имя Отчество
-                    </span>
-                    <img src="./Icons/arrow_downward.svg" alt="Arrow" />
-                    <span class="FIO-sort">А-Я</span>
+                  <th class="title-column column-FIO sortable-column">
+                    <button>
+                      <span class="title-column-text title-column-FIO">
+                        Фамилия Имя Отчество
+                      </span>
+                      <img src="./Icons/arrow_upward.svg" alt="Arrow" />
+                      <span class="FIO-sort">А-Я</span>
+                    </button>
                   </th>
-                  <th class="title-column column-date">
-                    <span class="title-column-text title-column-date">
-                      Дата и время создания
-                    </span>
-                    <img src="./Icons/arrow_downward.svg" alt="Arrow" />
+                  <th class="title-column column-date sortable-column">
+                    <button>
+                      <span class="title-column-text title-column-date">
+                        Дата и время создания
+                      </span>
+                      <img src="./Icons/arrow_upward.svg" alt="Arrow" />
+                    </button>
                   </th>
-                  <th class="title-column column-change">
-                    <span class="title-column-text title-column-change">
-                      Последние изменения
-                    </span>
-                    <img src="./Icons/arrow_downward.svg" alt="Arrow" />
+                  <th class="title-column column-change sortable-column">
+                    <button>
+                      <span class="title-column-text title-column-change">
+                        Последние изменения
+                      </span>
+                      <img src="./Icons/arrow_upward.svg" alt="Arrow" />
+                    </button>
                   </th>
                   <th class="title-column column-contacts">
                     <span class="title-column-text title-column-contacts">
@@ -105,7 +115,7 @@
                 </label>
                 <input
                   type="text"
-                  class="modal-add-input modal-add-surname"
+                  class="modal-add-input modal-add-need modal-add-surname"
                   id="add-second-name"
                 />
               </div>
@@ -116,7 +126,7 @@
                 </label>
                 <input
                   type="text"
-                  class="modal-add-input modal-add-name"
+                  class="modal-add-input modal-add-need modal-add-name"
                   id="add-first-name"
                 />
               </div>
@@ -133,7 +143,7 @@
               </div>
             </div>
           </div>
-          <div class="modal-add-contacts">
+          <div class="modal-add-contacts modal-contacts">
             <div class="contact-elements"></div>
 
             <button class="create-contact">
@@ -190,7 +200,7 @@
               </div>
             </div>
           </div>
-          <div class="modal-edit-contacts">
+          <div class="modal-edit-contacts modal-contacts">
             <div class="edit-contact-elements contact-elements"></div>
 
             <button class="create-contact">

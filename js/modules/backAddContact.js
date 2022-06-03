@@ -14,8 +14,6 @@ export function backAddContact(contacts, values) {
       .src.split("/")[4]
       .split(".")[0];
 
-    console.log(type);
-
     div.classList.add("contact-edit-element");
     select.classList.add("contact-type");
     input.classList.add("contact-text");

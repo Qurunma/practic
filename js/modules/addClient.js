@@ -1,7 +1,7 @@
 import { sender } from "./send.js";
 import { backAddContact } from "./backAddContact.js";
 
-export function addClient({ FIO, social, date, id }) {
+export function addClient({ FIO, social, date, id }, error, fromFilter) {
   const socialText = [];
 
   const tbody = document.querySelector("tbody");
@@ -18,18 +18,20 @@ export function addClient({ FIO, social, date, id }) {
           fromServer: false,
         };
 
-  //   console.log(date);
-
   errors.forEach((element) => {
     element.textContent = "";
   });
 
   if (
+    error ||
     (inpSurname.value.trim() != "" &&
+      !inpSurname.value.includes(" ") &&
       !Number(inpSurname.value.trim()) &&
       inpName.value.trim() != "" &&
+      !inpName.value.includes(" ") &&
       !Number(inpName.value.trim()) &&
-      !Number(inpFathername.value.trim())) ||
+      !Number(inpFathername.value.trim()) &&
+      !inpFathername.value.includes(" ")) ||
     (FIO != undefined && social != undefined && date != undefined)
   ) {
     const row = document.createElement("tr");
@@ -75,7 +77,6 @@ export function addClient({ FIO, social, date, id }) {
     // столбец 5
     if (!contacts.fromServer) {
       for (let i = 0; i < contacts.social.length; i++) {
-        console.log(contacts);
         const select = contacts.social[i].querySelector(".contact-type");
         const value = contacts.social[i].querySelector(".contact-text").value;
         if (value) {
@@ -120,7 +121,6 @@ export function addClient({ FIO, social, date, id }) {
       }
     } else {
       for (let i = 0; i < contacts.social.length; i++) {
-        console.log(contacts.social[i].text);
         const button = document.createElement("button");
         const img = document.createElement("img");
 
@@ -258,7 +258,6 @@ export function addClient({ FIO, social, date, id }) {
     }
 
     if (!FIO) {
-      console.log(socialText);
       sender({
         FIO: columns[1].textContent,
         social: { icon: allSocialSrc, text: socialText },
@@ -266,21 +265,29 @@ export function addClient({ FIO, social, date, id }) {
       });
     }
   } else {
-    if (inpSurname.value.trim() == "" || Number(inpSurname.value.trim())) {
+    if (
+      inpSurname.value.trim() == "" ||
+      Number(inpSurname.value.trim()) ||
+      inpSurname.value.includes(" ")
+    ) {
       const modalItem = inpSurname.closest(".modal-add-item");
       modalItem.querySelector(".error").textContent =
         "Введите корректную фамилию";
     }
-    if (inpName.value.trim() == "" || Number(inpName.value.trim())) {
+    if (
+      inpName.value.trim() == "" ||
+      Number(inpName.value.trim()) ||
+      inpName.value.includes(" ")
+    ) {
       const modalItem = inpName.closest(".modal-add-item");
       modalItem.querySelector(".error").textContent = "Введите корректное имя";
     }
     if (
-      inpFathername.value.trim() != "" &&
-      Number(inpFathername.value.trim())
+      (inpFathername.value.trim() != "" &&
+        Number(inpFathername.value.trim())) ||
+      inpFathername.value.includes(" ")
     ) {
       const modalItem = inpFathername.closest(".modal-add-item");
-      console.log(modalItem);
       modalItem.querySelector(".error").textContent =
         "Введите корректное отчество";
     }

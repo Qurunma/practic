@@ -1,7 +1,7 @@
 import { binder } from "./modules/mainModule.js";
 import { addClient } from "./modules/addClient.js";
 
-async function main() {
+export async function main() {
   const response = await fetch("http://localhost:3000/api/todos/");
   const data = await response.json();
 

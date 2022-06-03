@@ -101,6 +101,9 @@ header {
 .title-column {
   text-align: left;
 }
+.title-column button {
+  background: rgba(0, 0, 0, 0);
+}
 .title-column-text {
   text-align: left;
   font-size: 1.2rem;
@@ -307,19 +310,19 @@ header {
   padding: 2.5rem 3rem;
   margin-bottom: 2.5rem;
 }
-.modal-add-contacts button {
+.create-contact {
   display: inline-flex;
   align-items: center;
   margin: 0.9rem auto;
   height: 1.9rem;
   background: rgba(0, 0, 0, 0);
 }
-.modal-add-contacts button img {
+.create-contact img {
   width: 1.33rem;
   height: 1.33rem;
   margin-right: 0.53rem;
 }
-.modal-add-contacts button span {
+.create-contact span {
   font-family: "Open Sans";
   font-style: normal;
   font-weight: 600;
@@ -429,19 +432,12 @@ header {
   padding: 2.5rem 3rem;
   margin-bottom: 2.5rem;
 }
-.modal-edit-contacts button {
-  display: inline-flex;
-  align-items: center;
-  margin: 0.9rem auto;
-  height: 1.9rem;
-  background: rgba(0, 0, 0, 0);
-}
-.modal-edit-contacts button img {
+.create-contact img {
   width: 1.33rem;
   height: 1.33rem;
   margin-right: 0.53rem;
 }
-.modal-edit-contacts button span {
+.create-contact span {
   font-family: "Open Sans";
   font-style: normal;
   font-weight: 600;
@@ -552,4 +548,18 @@ header {
   align-items: center;
   justify-content: center;
   font-size: 14px;
+}
+.contact span {
+  top: -10%;
+}
+.btn-delete {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+
+  background: #e7e5eb;
+  border: 1px solid #c8c5d1;
 }
